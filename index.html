@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panadería Pepe | Sabor Tradicional</title>
+    <style>
+        :root { --cafe: #4e342e; --oro: #d4a373; --crema: #fefae0; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--crema); color: var(--cafe); }
+        header { background: var(--cafe); color: white; padding: 2rem; text-align: center; }
+        .hero { padding: 4rem 1rem; text-align: center; background: #ede0d4; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 2rem; }
+        .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-info { padding: 1.5rem; text-align: center; }
+        footer { background: var(--cafe); color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🥖 Panadería Pepe 🥐</h1>
+    <p>Desde el horno con amor, directo a tu mesa.</p>
+</header>
+
+<section class="hero">
+    <h2>Nuestros Ingredientes</h2>
+    <p>Solo usamos las mejores <strong>harinas</strong> y procesos artesanales.</p>
+</section>
+
+<div class="grid">
+    <!-- Pan Artesanal -->
+    <div class="card">
+        <img src="https://images.unsplash.com" alt="Pan artesanal">
+        <div class="card-info">
+            <h3>Panes de la Casa</h3>
+            <p>Baguettes, hogazas y pan de masa madre recién horneado.</p>
+        </div>
+    </div>
+
+    <!-- Dulces -->
+    <div class="card">
+        <img src="https://images.unsplash.com" alt="Dulces y pasteles">
+        <div class="card-info">
+            <h3>Repostería Fina</h3>
+            <p>Donas, croissants y pasteles para endulzar tu día.</p>
+        </div>
+    </div>
+
+    <!-- Harinas y Granos -->
+    <div class="card">
+        <img src="https://images.unsplash.com" alt="Harina y granos">
+        <div class="card-info">
+            <h3>Calidad en la Masa</h3>
+            <p>Selección especial de granos y harinas premium.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Panadería Pepe - Calle del Sabor #123</p>
+</footer>
+
+</body>
+</html>
