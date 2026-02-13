@@ -36,6 +36,27 @@ header p{font-size:1.1rem}
     margin-bottom:0.8rem;
 }
 
+/* Nueva sección de Video */
+.video-container {
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.video-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    background: #000;
+}
+
+video {
+    width: 100%;
+    display: block;
+}
+
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -142,10 +163,20 @@ footer{
     <p>Ingredientes naturales, fermentación lenta y recetas tradicionales.</p>
 </section>
 
+<!-- SECCIÓN DE VIDEO AGREGADA -->
+<section class="video-container">
+    <div class="video-wrapper">
+        <video controls poster="https://accountpepe.blob.core.windows.net/img/panaderia.jpg">
+            <source src="https://accountpepe.blob.core.windows.net/img/Éxito_en_Azure__Base_Sólida.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+    </div>
+</section>
+
 <div class="grid">
 
 <article class="card">
-<img src="https://accountpepe.blob.core.windows.net/img/panaderia.jpg"> //imagen desde el azure blobstorage
+<img src="https://accountpepe.blob.core.windows.net/img/panaderia.jpg">
 <div class="card-info">
     <div>
         <h3>Panes Artesanales</h3>
