@@ -5,16 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panadería Pepe | Sabor Tradicional</title>
     <style>
-        :root { --cafe: #4e342e; --oro: #d4a373; --crema: #fefae0; }
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--crema); color: var(--cafe); }
+        :root {
+            --cafe: #4e342e;
+            --oro: #d4a373;
+            --crema: #fefae0;
+            --whatsapp: #25D366;
+        }
+        * { box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--crema); color: var(--cafe); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+
         header { background: var(--cafe); color: white; padding: 2rem; text-align: center; }
+        header h1 { margin: 0; font-size: 1.8rem; }
+        header p { margin: 0.5rem 0 0 0; opacity: 0.95; }
+
         .hero { padding: 4rem 1rem; text-align: center; background: #ede0d4; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 2rem; }
-        .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card img { width: 100%; height: 200px; object-fit: cover; }
-        .card-info { padding: 1.5rem; text-align: center; }
+        .hero h2 { margin: 0 0 0.5rem 0; }
+        .hero p { margin: 0; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 2rem; max-width: 1100px; margin: 0 auto; }
+        .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.08); transition: transform 0.25s ease, box-shadow 0.25s ease; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 10px 18px rgba(0,0,0,0.12); }
+        .card img { width: 100%; height: 200px; object-fit: cover; display: block; }
+        .card-info { padding: 1.25rem; text-align: center; flex: 1; }
+        .card-info h3 { margin: 0 0 0.5rem 0; }
+        .card-info p { margin: 0; color: #455a64; }
+
         footer { background: var(--cafe); color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+
+        .whatsapp-btn {
+            position: fixed;
+            right: 16px;
+            bottom: 18px;
+            background: linear-gradient(180deg, var(--whatsapp), #1ebe5a);
+            color: white;
+            border-radius: 50px;
+            padding: 12px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 18px rgba(37,211,102,0.22);
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 1000;
+            transition: transform 0.12s ease, box-shadow 0.12s ease;
+        }
+        .whatsapp-btn:active { transform: translateY(1px) scale(0.995); }
+        .whatsapp-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+        .whatsapp-text { display: none; }
+        @media (min-width: 420px) {
+            .whatsapp-text { display: inline-block; }
+        }
+
+        @media (max-width: 480px) {
+            header { padding: 1.2rem; }
+            .hero { padding: 2.5rem 1rem; }
+            .card img { height: 150px; }
+        }
     </style>
 </head>
 <body>
@@ -29,38 +76,127 @@
     <p>Solo usamos las mejores <strong>harinas</strong> y procesos artesanales.</p>
 </section>
 
-<div class="grid">
+<div class="grid" role="list">
     <!-- Pan Artesanal -->
-    <div class="card">
-        <img src="https://images.unsplash.com" alt="Pan artesanal">
+    <article class="card" role="listitem">
+        <img
+            src="https://images.unsplash.com/photo-1542826438-6d0a1f0b4d4a?auto=format&fit=crop&w=1200&q=80"
+            alt="Baguettes y panes artesanales"
+            loading="lazy"
+            data-src="https://images.unsplash.com/photo-1542826438-6d0a1f0b4d4a?auto=format&fit=crop&w=1200&q=80"
+        >
         <div class="card-info">
             <h3>Panes de la Casa</h3>
             <p>Baguettes, hogazas y pan de masa madre recién horneado.</p>
         </div>
-    </div>
+    </article>
 
     <!-- Dulces -->
-    <div class="card">
-        <img src="https://images.unsplash.com" alt="Dulces y pasteles">
+    <article class="card" role="listitem">
+        <img
+            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80"
+            alt="Dulces y pasteles"
+            loading="lazy"
+            data-src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80"
+        >
         <div class="card-info">
             <h3>Repostería Fina</h3>
             <p>Donas, croissants y pasteles para endulzar tu día.</p>
         </div>
-    </div>
+    </article>
 
     <!-- Harinas y Granos -->
-    <div class="card">
-        <img src="https://images.unsplash.com" alt="Harina y granos">
+    <article class="card" role="listitem">
+        <img
+            src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1200&q=80"
+            alt="Granos y harinas premium"
+            loading="lazy"
+            data-src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1200&q=80"
+        >
         <div class="card-info">
             <h3>Calidad en la Masa</h3>
             <p>Selección especial de granos y harinas premium.</p>
         </div>
-    </div>
+    </article>
 </div>
 
 <footer>
-    <p>&copy; 2024 Panadería Pepe - Calle del Sabor #123</p>
+    <p>&copy; 2026 Panadería Pepe - Calle del Sabor #123</p>
 </footer>
+
+<!-- Botón WhatsApp -->
+<a id="whatsapp-btn" class="whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Pedir por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+        <path d="M20.52 3.48A11.87 11.87 0 0 0 12.01.5C6.05.5 1.21 5.34 1.21 11.3c0 2.07.55 4.07 1.6 5.85L.5 23.5l6.6-2.01a11.77 11.77 0 0 0 4.9 1.02h.02c6 0 10.84-4.84 10.84-10.8 0-2.9-1.1-5.6-3.06-7.24z" fill="white" opacity=".06"/>
+        <path d="M17.7 14.3c-.3-.15-1.7-.84-1.96-.93-.26-.08-.45-.12-.64.12-.19.24-.73.93-.9 1.12-.16.19-.33.22-.61.07-.28-.15-1.18-.44-2.24-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.58.12-.12.28-.33.42-.5.14-.17.19-.29.28-.48.09-.19.05-.36-.02-.51-.07-.15-.64-1.54-.88-2.12-.23-.56-.47-.48-.64-.48-.16 0-.35-.02-.54-.02-.19 0-.5.07-.76.36-.26.28-1 1-1 2.45 0 1.45 1.03 2.85 1.18 3.05.15.19 2.03 3.12 4.92 4.24 2.89 1.12 2.89.75 3.42.7.53-.05 1.71-.7 1.95-1.38.24-.68.24-1.25.17-1.37-.07-.12-.26-.18-.55-.33z" fill="white"/>
+    </svg>
+    <span class="whatsapp-text">Pedir por WhatsApp</span>
+</a>
+
+<script>
+(function() {
+    // CONFIGURACIÓN: reemplaza PHONE_NUMBER por tu número (sin + ni guiones).
+    const PHONE_NUMBER = '34123456789'; // <-- REEMPLAZA AQUÍ con tu número internacional sin "+"
+    const DEFAULT_MESSAGE = '¡Hola! Quiero hacer un pedido, por favor. ¿Podrían indicarme disponibilidad y precios?';
+    const encodedMessage = encodeURIComponent(DEFAULT_MESSAGE);
+
+    function buildWhatsAppLink(phone, message) {
+        if (!phone || phone.trim().length === 0) return '#';
+        return 'https://wa.me/' + encodeURIComponent(phone) + '?text=' + message;
+    }
+
+    // Botón WhatsApp
+    const btn = document.getElementById('whatsapp-btn');
+    const waLink = buildWhatsAppLink(PHONE_NUMBER, encodedMessage);
+    if (waLink === '#') {
+        btn.href = '#';
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Configura el número de WhatsApp en el script (PHONE_NUMBER).');
+        });
+    } else {
+        btn.href = waLink;
+        btn.addEventListener('click', function() {
+            try { localStorage.setItem('lastWhatsAppClick', new Date().toISOString()); } catch(e){}
+        });
+    }
+
+    // Fallback: si alguna imagen no carga, reemplazar por placeholder
+    const FALLBACK = 'https://via.placeholder.com/1200x800?text=Imagen+no+disponible';
+
+    function handleImageError(e) {
+        const img = e.target;
+        if (img && img.src !== FALLBACK) {
+            console.warn('Imagen no disponible, se usa fallback:', img.dataset && img.dataset.src ? img.dataset.src : img.src);
+            img.src = FALLBACK;
+        }
+    }
+
+    // Añadir manejadores a todas las img del grid
+    document.querySelectorAll('.grid img').forEach(img => {
+        img.addEventListener('error', handleImageError);
+        // Intento adicional: si data-src definido y src está vacío o genérico, poner data-src
+        if ((!img.src || img.src.trim()==='') && img.dataset && img.dataset.src) {
+            img.src = img.dataset.src;
+        }
+    });
+
+    // Logs para depuración (puedes quitar)
+    window.addEventListener('load', () => {
+        document.querySelectorAll('.grid img').forEach(img => {
+            if (img.complete && img.naturalWidth !== 0) {
+                console.log('Imagen cargada correctamente:', img.src);
+            } else if (img.complete && img.naturalWidth === 0) {
+                console.warn('Imagen rota (naturalWidth=0):', img.src);
+                img.src = FALLBACK;
+            }
+        });
+    });
+
+    // Forzar scroll arriba al volver (mejora UX en móviles)
+    window.addEventListener('pageshow', function() { window.scrollTo(0,0); });
+})();
+</script>
 
 </body>
 </html>
